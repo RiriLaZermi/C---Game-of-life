@@ -10,7 +10,7 @@ The Game of Life is a cellular automaton based on simple rules, where each cell 
 - Press CTRL + C to stop
 
 ## Makefile
-If you want to recompile :
+If you want to compile :
 ```bash
 make
 ```

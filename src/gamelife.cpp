@@ -58,30 +58,30 @@ int main(int argv, char** args ) {
 
     while(true)
     {
+		if (!screen.isGamePaused()) {
+			for(int i=0;i<GAME_HEIGHT;i++){
+				
+				for(int j=0;j<GAME_WIDTH;j++){
+					
+				   newState[i][j]=ConwayRules(i,j,oldState);
+				}
 
-        for(int i=0;i<GAME_HEIGHT;i++){
-            
-            for(int j=0;j<GAME_WIDTH;j++){
-                
-               newState[i][j]=ConwayRules(i,j,oldState);
-            }
+			}
 
+			for(int i=0;i<GAME_HEIGHT;i++){
+				
+				for(int j=0;j<GAME_WIDTH;j++){
+					
+					if(oldState[i][j]) color=COLOR_ALIVE;else color=COLOR_DEAD;
+					screen.drawRect(i,j,color); 
+				}
+
+			}
+		oldState=newState;
+		SDL_Delay(DELAY_ms);
+		screen.update();
         }
-
-        for(int i=0;i<GAME_HEIGHT;i++){
-            
-            for(int j=0;j<GAME_WIDTH;j++){
-                
-                if(oldState[i][j]) color=COLOR_ALIVE;else color=COLOR_DEAD;
-                screen.drawRect(i,j,color); 
-            }
-
-        }
-        
-        oldState=newState;
-        //cin.get();
-        SDL_Delay(DELAY_ms);
-        screen.update();
+   
         screen.input();
         
 

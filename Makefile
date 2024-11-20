@@ -1,4 +1,4 @@
 all:
-	g++ -I src/include -L src/lib -o main gamelife.cpp -lmingw32 -lSDL2main -lSDL2
+	g++ -I include -L lib -o game_of_life src/gamelife.cpp -lmingw32 -lSDL2main -lSDL2
 	.\main.exe
 

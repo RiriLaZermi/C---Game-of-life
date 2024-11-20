@@ -10,6 +10,7 @@ class Screen_class {
     SDL_Window* window;
     SDL_Renderer* renderer;
     SDL_Event event;
+	bool isPaused=0;
     public:
     Screen_class() 
     {
@@ -33,7 +34,9 @@ class Screen_class {
         
         SDL_RenderPresent(renderer);
     }
-	
+	bool isGamePaused(){
+		return isPaused;
+	}
     void input() {
         while( SDL_PollEvent( &event ) )
         {  
@@ -44,7 +47,17 @@ class Screen_class {
                     SDL_Quit();
                     exit(0);
                     break;
+				case SDL_KEYDOWN:
+                if (event.key.keysym.sym == SDLK_p) {
+                    isPaused = !isPaused;
 
+                    if (isPaused) {
+                        std::cout << "PAUSE" << std::endl;
+                    } else {
+                        std::cout << "GO" << std::endl;
+                    }
+                }
+                break;
                 default:
                     break;
             }

@@ -9,7 +9,7 @@ using namespace std;
 
 const int GAME_WIDTH = 100;
 const int GAME_HEIGHT = 100;
-const int DELAY_ms = 50;
+const int DELAY_ms = 100;
 const int INITIALISATION_ALIVE_CELL = 10; //10% 
 
 SDL_Color COLOR_BG={255,255,255,0};

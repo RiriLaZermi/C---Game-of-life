@@ -1,3 +1,4 @@
+
 # Game of Life - Implementation in C++ with SDL2
 
 ## Description
@@ -7,3 +8,9 @@ The Game of Life is a cellular automaton based on simple rules, where each cell 
 ## Features
 - Press P to pause
 - Press CTRL + C to stop
+
+## Makefile
+If you want to recompile :
+```bash
+make
+```
